@@ -23,10 +23,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         final var filterChain = http
-                .addFilterAt(apiKeyFilter, UsernamePasswordAuthenticationFilter.class)
-                .addFilterAfter(usernamePasswordFilter, ApiKeyFilter.class)
+                .httpBasic(Customizer.withDefaults())
+//                .addFilterAt(apiKeyFilter, UsernamePasswordAuthenticationFilter.class)
+//                .addFilterAfter(usernamePasswordFilter, ApiKeyFilter.class)
                 .authorizeHttpRequests(requestConfig -> {
-                    requestConfig.anyRequest().authenticated();
+                    requestConfig
+//                            .requestMatchers("/demo")
+//                            .hasAuthority("read")
+                            .anyRequest().authenticated();
                 })
                 .build();
         return filterChain;
