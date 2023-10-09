@@ -73,7 +73,7 @@ public class CustomClientService implements RegisteredClientRepository {
                 .clientAuthenticationMethod(new ClientAuthenticationMethod(client.getAuthMethod()))
                 .redirectUri(client.getRedirectUri())
                 .tokenSettings(TokenSettings.builder()
-                        .accessTokenFormat(OAuth2TokenFormat.REFERENCE)
+//                        .accessTokenFormat(OAuth2TokenFormat.REFERENCE)
                         .accessTokenTimeToLive(Duration.ofHours(24))
                         .build())
                 .build();
@@ -92,7 +92,7 @@ public class CustomClientService implements RegisteredClientRepository {
                 .clientAuthenticationMethod(new ClientAuthenticationMethod(client.getAuthMethod()))
                 .redirectUri(client.getRedirectUri())
                 .tokenSettings(TokenSettings.builder()
-                        .accessTokenFormat(OAuth2TokenFormat.REFERENCE)
+//                        .accessTokenFormat(OAuth2TokenFormat.REFERENCE)
                         .accessTokenTimeToLive(Duration.ofHours(24))
                         .build())
                 .build();
